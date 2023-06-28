@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perlin Landscape Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #272727;
+            color: #ffffff;
+        }
+
+        #canvasContainer {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+
+        .controls div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div>
+            <label for="lines">Lines</label>
+            <input id="lines" type="number" min="1" max="500" value="160">
+        </div>
+        <div>
+            <label for="segments">Segments</label>
+            <input id="segments" type="number" min="1" max="500" value="230">
+        </div>
+        <div>
+            <label for="amplification">Amplification</label>
+            <input id="amplification" type="number" step="0.1" min="0.1" max="10" value="2.7">
+        </div>
+        <button onclick="myp5.draw()">Generate</button>
+    </div>
+    <div id="canvasContainer"></div>
+    <!-- <script src="p5.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://unpkg.com/p5.js-svg@1.5.1"></script>
+    <script src="perlin_landscape_v5.js"></script>
+</body>
+</html>
